@@ -12,11 +12,29 @@ app.get('/', function(req, res) {
 })
 
 app.post('/user', function(req, res, next) {
+  var token = req.body.token
+  var teamId = req.body.team_id
+  var teamDomain = req.body.team_domain
+  var channelId = req.body.channel_id
+  var channelName = req.body.channel_name
+  var timestamp = req.body.timestamp
+  var userId = req.body.user_id
   var userName = req.body.user_name
+  var text = req.body.text
+  var triggerWord = req.body.trigger_word
   var botPayLoad = {
-    text: 'Hello, ' + userName
+    text: token + '\n' +
+    teamId + '\n' +
+    teamDomain + '\n' +
+    channelId + '\n' +
+    channelName + '\n' +
+    timestamp + '\n' +
+    userId + '\n' +
+    userName + '\n' +
+    text + '\n' +
+    triggerWord
   }
-  if (userName !== 'slackbot') {
+  if (token === 'WOh9J3NglTbLxPveP9aTc6VK' && userName !== 'slackbot') {
     return res.status(200).json(botPayLoad)
   } else {
     return res.status(200).end()
