@@ -26,7 +26,7 @@ app.post('/user', function(req, res, next) {
     text: userName + ': ' + text
   }
 
-  if (token === 'WOh9J3NglTbLxPveP9aTc6VK'
+  if (token === 'WOh9J3NglTbLxPveP9aTc6VK' &&
     // token === process.env.token &&
   // teamId === process.env.teamId &&
   // channelId === process.env.channelId &&
