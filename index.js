@@ -23,11 +23,10 @@ app.post('/user', function(req, res, next) {
   var text = req.body.text.slice(6)
   var triggerWord = req.body.trigger_word
   var botPayLoad = {
-    text: userName + ': ' + text
+    text: '@' + userName + ': ' + text
   }
 
-  if (token === 'WOh9J3NglTbLxPveP9aTc6VK' &&
-    // token === process.env.token &&
+  if (token === process.env.token &&
   // teamId === process.env.teamId &&
   // channelId === process.env.channelId &&
   userName !== 'slackbot') {
