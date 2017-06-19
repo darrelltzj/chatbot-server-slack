@@ -7,11 +7,11 @@ var port = process.env.PORT || 5000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/', function(req, res) {
+app.get ('/', function (req, res) {
   res.status(200).send('Hi, I am a chatbot for slack')
 })
 
-app.post('/user', function(req, res, next) {
+app.post ('/user', function (req, res, next) {
   var token = req.body.token
   var teamId = req.body.team_id
   var teamDomain = req.body.team_domain
@@ -36,6 +36,6 @@ app.post('/user', function(req, res, next) {
   }
 })
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log('running: ' + port)
 })
