@@ -27,7 +27,7 @@ app.post('/user', function(req, res, next) {
   }
 
   if (token === process.env.token &&
-  // teamId === process.env.teamId &&
+  teamId === process.env.teamId &&
   // channelId === process.env.channelId &&
   userName !== 'slackbot') {
     return res.status(200).json(botPayLoad)
